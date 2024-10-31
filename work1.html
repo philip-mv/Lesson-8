@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Static and Instance Methods</title>
+</head>
+
+<body>
+    <p id="hello"></p>
+    <p id="hi"></p>
+    <p id="welcome"></p>
+
+    <script>
+        class Student {
+            constructor(name) {
+                this.studentname = name;
+            }
+
+            // Instance method: Accesses instance-specific data
+            hello() {
+                return "Hello!! " + this.studentname;
+            }
+
+            // Static method: Doesn't access instance-specific data
+            static welcome(x) {
+                return "Welcome " + x.studentname;
+            }
+        }
+
+        // Create an instance
+        const myname = new Student("Carol");
+
+        // Call methods on the instance and class
+        document.getElementById("hello").innerHTML = myname.hello(); // Call instance method
+        // Assuming 'hi' method is defined, call it here
+        document.getElementById("hi").innerHTML = myname.hi(); // Call instance method
+        document.getElementById("welcome").innerHTML = Student.welcome(myname); // Call static method
+    </script>
+</body>
+
+</html>
